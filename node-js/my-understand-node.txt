@@ -1,0 +1,240 @@
+👤 What is a CLIENT?
+
+A client is who asks for something.
+Examples of clients:
+    Your browser (Chrome, Edge)
+    Mobile apps (Instagram, WhatsApp)
+    Postman
+    Another Node.js program
+
+👉 Client’s job:
+    Send request
+    Receive response
+    Show it to user
+
+
+🖥️ What is a SERVER?
+
+A server is who listens and responds.
+👉 Server’s job:
+    Wait for requests
+    Process logic
+    Send response back
+    Your Node.js app is the server.
+
+
+^Client = asker
+^Server = giver
+
+
+
+| Real Life      | Computer World |
+| -------------- | -------------- |
+| You (customer) | User           |
+| Waiter         | Client         |
+| Kitchen        | Server         |
+| Order          | Request        |
+| Food           | Response       |
+
+
+✅ Now your YouTube example:
+You (user) type something in the YouTube search bar (client).
+The client sends the search request to the YouTube server.
+The server processes the request and sends back matching videos.
+The client shows those videos on the screen.
+
+🧠 Final Simple Definition (Easy to Remember):
+🧍 User
+    A human
+    Uses an app or browser
+
+💻 Client
+    Browser / app / search bar
+    Sends requests
+    Displays responses
+
+🖥️ Server
+    Always running
+    Receives requests
+    Processes logic
+    Sends responses
+
+
+🔥 One-line Memory Trick
+    Client asks → Server works → Client shows
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+CODE:
+import http from "http";
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Hello from Server!");
+});
+
+server.listen(3000, () => {
+    console.log("Server running at http://localhost:3000");
+});
+
+LINE BY LINE EXPLAINATION:
+
+🔹 Line 1: import http from "http";
+👉 You are importing Node.js’s built-in HTTP module
+“Node.js, I want to create a web server, so give me the HTTP tools.”    
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+🔹 Line 2: http.createServer((req, res) => { ... })
+👉 This line creates a server.
+req (request)
+Comes from the client (browser)
+
+Contains:
+    URL
+    method (GET, POST)
+    headers
+
+res (response)
+Sent from the server to the client
+
+Used to:
+    send status code
+    send data
+end the response
+
+📌 Think like this:
+req = question
+res = answer
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+🔹 Line 3: res.writeHead(200, { "Content-Type": "text/plain" });
+👉 This line is VERY important.
+Let’s break it fully.
+
+✅ 200 — What does it mean?
+200 is an HTTP Status Code
+
+It means:
+✅ “Everything is OK. Request was successful.”
+
+Common status codes:
+Code	  Meaning
+200	    OK (success)
+404	    Page not found
+500	    Server error
+403	    Forbidden
+
+So here:
+res.writeHead(200)
+
+Means:
+“Hey browser, I handled your request successfully.”
+
+✅ { "Content-Type": "text/plain" }
+This is called response headers
+It tells the browser:
+    “What type of data am I sending?”
+    text/plain -->> Means simple text
+    Not HTML
+    Not JSON
+
+Examples:
+"Hello from Server!" → text/plain
+<h1>Hello</h1> → text/html
+{ name: "Ram" } → application/json
+
+So this line together means:
+“Response is successful (200) and I’m sending plain text.”
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+🔹 Line 4: res.end("Hello from Server!");
+❓ Is res.end() compulsory?
+👉 YES. 100% compulsory
+Why?
+Because:
+    It sends the response
+    It closes the connection
+    Without it → browser will keep waiting
+
+Think like phone call 📞:
+res.write() → speaking
+res.end() → hanging up the call
+
+So this line means:
+“Here is the final response. I’m done.”
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+🔹 Line 6: server.listen(3000, () => { ... })
+This tells the server:
+    “Start listening for requests.”
+
+✅ What is 3000?
+3000 is a PORT number
+
+What is a port?
+    A port is like a door number in your computer.
+    Your computer = house 🏠
+    Port = door 🚪
+    Server listens behind that door
+
+So:
+server.listen(3000)
+
+Means:
+“Server, open door number 3000 and wait for requests.”
+
+❓Can we give any number?
+✔ Yes, mostly.
+Valid port range:
+1024 – 65535 (safe to use)
+
+Common ports:
+
+3000 → Node.js apps
+8080 → Dev servers
+80 → HTTP (default)
+443 → HTTPS (secure)
+So yes, you can use:
+
+3000, 4000, 5000, 8080
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+🔹 Line 7: console.log("Server running at http://localhost:3000");
+This line is only for YOU (developer)
+
+It:
+Prints a message in terminal
+Helps you know server is running
+NOT sent to browser
+
+✅ What is http://localhost:3000?
+
+Let’s break it:
+
+http://
+    Protocol
+    Rules for communication
+
+localhost
+    Means your own computer
+    Same as 127.0.0.1
+
+3000
+    Port where server is running
+    So this means:
+    “Open browser and go to my computer, port 3000.”
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+| Line           | Meaning              |
+| -------------- | -------------------- |
+| `createServer` | Create a server      |
+| `req`          | Request from browser |
+| `res`          | Response to browser  |
+| `200`          | Success              |
+| `Content-Type` | Type of data         |
+| `res.end()`    | Finish response      |
+| `3000`         | Port (door number)   |
+| `localhost`    | Your computer        |
+
+
+
+

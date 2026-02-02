@@ -1,0 +1,27 @@
+Setup_Global.txt:
+1. Setup Node.js
+🔹 Download & Install
+    (i) Go to the official site 👉 https://nodejs.org
+
+    (ii) You will see two versions:
+        LTS (Long Term Support) (Recommended) → Stable version for most users.
+        Current → Latest features (not always stable).
+        ✅ Choose LTS and download.
+
+    (iii) Install it (just next → next → finish).
+
+    (iv) After install, open Command Prompt (cmd) or PowerShell and check:
+        node -v
+        npm -v
+
+2. First Node.js Program
+    (i) Create a new file → app.js
+    (ii) Write:
+            console.log("Hello, Node.js!");
+    (iii) Run it:
+            node app.js
+
+3. Global Objects in Node.js
+🔹 Examples:
+    (i) __dirname → gives current directory path
+    (ii) __filename → gives current file pat…

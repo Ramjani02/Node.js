@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <h3>Send GET Request to Node Server</h3>
+ <button onclick="sendGet()">Send GET Request</button>
+ <script>
+ function sendGet() {
+ fetch("http://localhost:3000/?name=Ajay&age=22")
+ .then(res => res.text())
+ .then(data => console.log("Response:", data))
+ .catch(err => console.error("Error:", err));
+ }
+ </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+Intro.txt: (Stream&Buffers):
+1. What is a Buffer?
+    A Buffer is a temporary memory location in Node.js.
+    Used to store raw binary data (0s and 1s) when transferring between processes.
+    Example: when you read a file, data is first stored in a Buffer before being processed.
+
+Example: Creating a Buffer:
+// Create a buffer with a string
+const buf = Buffer.from('Hello Node.js');
+console.log(buf);         // Prints binary data <Buffer 48 65 6c 6c 6f ...>
+console.log(buf.toString()); // Convert buffer back to string
+
+2. What is a Stream?
+    A Stream is like a pipeline that lets you read/write data piece by piece instead of loading the whole file at once.
+    Good for large files (videos, logs, etc.).
+    Streams work with Buffers internally.
+
+    👉 Think of it like a water pipe:
+    Buffer = the water tank storing chunks.
+    Stream = the pipe that controls the flow of water.
+
+3. Types of Streams:
+    (i) Readable Stream → For reading data (e.g., file read).
+    (ii) Writable Stream → For writing data (e.g., file write).
+    (iii) Duplex Stream → Both read and write (e.g., network sockets).
+    (iv) Transform Stream → Modify data while streaming (e.g., compression).

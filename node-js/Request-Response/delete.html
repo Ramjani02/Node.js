@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>DELETE Example</h2>
+<button onclick="deleteUser()">Delete User</button>
+<script>
+function deleteUser() {
+ fetch("http://localhost:4000/user", {
+ method: "DELETE"
+ })
+ .then(res => res.json())
+ .then(data => console.log("DELETE Response:", data));
+}
+</script>
+</body>
+</html>

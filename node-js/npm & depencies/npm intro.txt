@@ -1,0 +1,18 @@
+Introduction:
+ NPM (Node Package Manager) → A tool in Node.js used to install, manage, and share packages or 
+modules.
+ Dependencies → External packages that a project needs to run.
+ Example: express, lodash, axios
+Eg: 
+ NPM is like the Play Store.
+ Dependencies are like the apps you install from the Play Store.
+| Concept | Description |
+| ------------------------ | --------------------------------------------------- |
+| npm init | Initialize project and create package.json |
+| npm install <package> | Install dependency locally |
+| npm install -g <package> | Install dependency globally |
+| package.json | Holds project info + dependencies |
+| node_modules/ | Folder where packages are installed |
+| package-lock.json | Locks exact version of installed packages |
+| dependencies | Needed for running the project |
+| devDependencies | Needed only during development (like testing tools) |

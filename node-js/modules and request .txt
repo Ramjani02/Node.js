@@ -1,0 +1,22 @@
+Modules&Requires:
+Intro.txt:
+Node.js Modules & require – Notes
+1️. What is a Module?
+    A module is a JavaScript file or built-in feature that can be reused in other files.
+    Purpose: Organize code and reuse functionality.
+
+Types:
+    Built-in modules: Provided by Node.js (no installation needed)
+        Examples: fs, http, path, os, url, crypto
+
+    Custom modules: Created by us to reuse code
+        Example: greet.js
+
+2️. What is require()?
+    require() is a Node.js function to import a module into your file.
+
+Syntax:
+    const moduleName = require('module'); // built-in
+    const myModule = require('./myModule'); // custom module
+
+module.exports → defines what the module exports

@@ -1,0 +1,63 @@
+Mongoose ORM:
+    Mongoose is an ODM (library) for Node.js that helps interact with MongoDB. 
+    It is not part of MongoDB itself.
+
+    Mongoose is a tool that helps us interact with MongoDB using JavaScript 
+    objects instead of writing raw database queries.
+
+    Raw database queries mean using the database’s original query language directly.
+    Raw queries are like cooking from scratch, while an ORM is like using 
+    ready-made masala.
+
+Relational Database → SQL databases
+Non-Relational Database → MongoDB
+Mongoose is an ODM (Object Document Mapper) used to work with MongoDB.
+
+SQL Raw Queries (Relational DB):
+    SELECT:
+        -- Get all users
+        SELECT * FROM users;
+
+        -- Get users older than 18
+        SELECT * FROM users WHERE age > 18;
+
+    INSERT:
+        INSERT INTO users (name, email, age)
+        VALUES ('Ajay', 'ajay@gmail.com', 22);
+
+    UPDATE:
+        UPDATE users
+        SET age = 23
+        WHERE name = 'Ajay';
+
+    DELETE:
+        DELETE FROM users
+        WHERE age < 18;
+
+MongoDB Raw Queries (Non-relational DB):
+    SELECT:
+        // Get all users
+        db.users.find();
+
+        // Get users older than 18
+        db.users.find({ age: { $gt: 18 } });
+
+    INSERT:
+        db.users.insertOne({ name: "Ajay", email: "ajay@gmail.com", age: 22 });
+
+    UPDATE:
+        db.users.updateOne(
+        { name: "Ajay" },
+        { $set: { age: 23 } }
+        );
+
+    DELETE:
+        db.users.deleteOne({ name: "Ajay" });
+
+
+❌ “Mongoose is non-relational”
+✅ “MongoDB is non-relational, Mongoose is the tool”
+
+Installation:
+    npm install express mongoose
+    

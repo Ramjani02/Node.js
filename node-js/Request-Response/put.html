@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Send PUT Request to Update User</h2>
+<button onclick="sendPut()">Update User</button>
+<button onclick="getUser()">Get Current User</button>
+<script>
+function sendPut() {
+ const data = {
+ name: "Ajay Updated",
+ age: 25
+ };
+ fetch("http://localhost:3000", {
+ method: "PUT",
+ headers: {
+ "Content-Type": "application/json"
+ },
+ body: JSON.stringify(data)
+ })
+ .then(res => res.json())
+ .then(msg => console.log("Server:", msg))
+ .catch(err => console.log("Error:", err));
+}
+function getUser() {
+ fetch("http://localhost:3000")
+ .then(res => res.json())
+ .then(data => console.log("Current User:", data))
+ .catch(err => console.log("Error:", err));
+}
+</script>
+</body>
+</html>

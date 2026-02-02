@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>PATCH Request Example</title>
+</head>
+<body>
+<h2>Update User Partially (PATCH)</h2>
+<button onclick="sendPatch()">Patch User</button>
+<button onclick="getUser()">Get Current User</button>
+<script>
+function sendPatch() {
+ const data = {
+ city: "Bangalore" // only partial update
+ };
+ fetch("http://localhost:3000/user", {
+ method: "PATCH",
+ headers: {
+ "Content-Type": "application/json"
+ },
+ body: JSON.stringify(data)
+ })
+ .then(res => res.json())
+ .then(msg => console.log("Server:", msg))
+ .catch(err => console.log("Error:", err));
+}
+function getUser() {
+ fetch("http://localhost:3000/user")
+ .then(res => res.json())
+ .then(data => console.log("Current User:", data))
+ .catch(err => console.log("Error:", err));
+}
+</script>
+</body>
+</html>

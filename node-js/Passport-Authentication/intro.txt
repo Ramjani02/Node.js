@@ -1,0 +1,49 @@
+Passport.js Authentication in Express JS:
+    Passport.js is an authentication middleware for Node.js applications, mainly used with Express JS. It helps developers authenticate users easily and securely.
+    Authentication means verifying who the user is. For example, when a user logs in using a username and password, the system checks whether the details are correct. Passport.js handles this process for you.
+    Passport.js works using different authentication strategies. A strategy defines how a user will log in. Common strategies include Local Strategy (username and password), JWT Strategy (token-based authentication), and OAuth strategies like Google or GitHub login.
+
+
+Installation:
+    Local strategy: npm install express express-session passport passport-local bcrypt
+    JWT strategy: npm install passport-jwt jsonwebtoken
+    OAuth: Google or GitHub
+        Google: npm install passport-google-oauth20
+        GitHub: npm install passport-github2
+
+
+| Strategy | Password | Session | Token | Third-party |
+| -------- | -------- | ------- | ----- | ----------- |
+| Local    | ✅      | ✅      | ❌    | ❌         |
+| JWT      | ❌      | ❌      | ✅    | ❌         |
+| Google   | ❌      | ✅      | ❌    | ✅         |
+| GitHub   | ❌      | ✅      | ❌    | ✅         |
+
+
+Same concept in Passport.js:
+    Local Strategy
+        Simple websites
+        Admin panels
+        College portals
+
+    JWT Strategy
+        Mobile apps
+        REST APIs
+        Frontend + Backend separate
+
+    Google / GitHub (OAuth)
+        Fast login
+        Password maintain panna vendam
+        Trust third-party verification
+
+Eg:
+    Transport modes:
+        Bike
+        Car
+        Bus
+        Train
+
+    These are:
+    ❌ Not like Bike → Car → Bus → Train as levels.
+    ✅ We use whichever is correct for the situation.
+    
