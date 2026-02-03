@@ -3,8 +3,13 @@
 
 // Import modules
 const express = require("express");
-const session = require("express-session");
-const cors = require("cors");
+const session = require("express-session");     //Imports session middleware
+const cors = require("cors");     //Allows frontend & backend to talk
+
+
+// Creates server app
+// app = main controller
+
 
 const app = express();
 app.use(express.json());
